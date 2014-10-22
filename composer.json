@@ -1,0 +1,21 @@
+{
+    "name": "krok/yii2-imperavi",
+    "description": "Yii2 Imperavi redactor",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "extension", "imperavi", "redactor", "editor"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "krok",
+            "email": "creator.git@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "krok\\imperavi\\": ""
+        }
+    }
+}
