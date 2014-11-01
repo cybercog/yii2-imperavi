@@ -6,7 +6,7 @@ use yii;
 use yii\helpers\Json;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
-use app\modules\language\models\Language;
+use krok\language\models\Language;
 
 class ImperaviWidget extends \yii\widgets\InputWidget
 {

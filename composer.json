@@ -11,7 +11,10 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "*",
+        "krok/yii2-language": "*",
+        "krok/yii2-page": "*",
+        "krok/yii2-cp": "*"
     },
     "autoload": {
         "psr-4": {

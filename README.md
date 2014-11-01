@@ -26,24 +26,31 @@ Configure
 Add to config file (config/web.php or common\config\main.php)
 
 ```
-'modules' => [
-    'redactor' => 'yii\imperavi\Imperavi',
+'bootstrap' => [
+    'imperavi',
 ],
 ```
 
-or if you want to change the upload directory.
-to path/to/uploadfolder
-default value `@webroot/uploads`
+upload directory `@webroot/uploads`
 
 ```
 'modules' => [
-    'redactor' => [
-        'class'=>'yii\imperavi\Imperavi',
-        'uploadDir'=>'@webroot/path/to/uploadfolder'
-    ],
+    'class' => 'krok\imperavi\Imperavi',
 ],
 ```
 
+register modules for Cp modules ( @vendor\krok\cp\Cp.php )
+
+```
+public function registerModules()
+{
+    $this->modules = [
+        'imperavi' => [
+            'class' => 'krok\imperavi\Manage',
+        ],
+    ];
+}
+```
 
 Usage
 -----
@@ -51,16 +58,16 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```
-<?=$form->field($model, 'body')->widget(\yii\imperavi\widgets\ImperaviWidget::className())?>
+<?=$form->field($model, 'body')->widget(\krok\imperavi\widgets\ImperaviWidget::className())?>
 ```
 
 or not use ActiveField
 
 ```
 <?=
-    \yii\imperavi\widgets\ImperaviWidget::widget([
+    krok\imperavi\widgets\ImperaviWidget::widget([
         'model' => $model,
-        'attribute'=>'body'
+        'attribute' => 'body'
     ])
 ?>
 ```
@@ -69,22 +76,28 @@ or config advanced redactor reference [Docs](http://imperavi.com/redactor/docs/)
 
 ```
 <?=
-    $form->field($model, 'body')->widget(\yii\imperavi\widgets\ImperaviWidget::className(),[
+    $form->field($model, 'body')->widget(
+        krok\imperavi\widgets\ImperaviWidget::className(),
+        [
             'clientOptions' => [
+                'buttonSource' => true,
+                'fileUpload' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/FileUpload']),
+                'fileManagerJson' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/FileList']),
+                'imageUpload' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/ImageUpload']),
+                'imageManagerJson' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/ImageList']),
+                'definedLinks' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/PageList']),
                 'plugins' => [
+                    'filemanager',
+                    'imagemanager',
+                    'definedlinks',
                     'fontfamily',
-                    'fontsize',
                     'fontcolor',
-                    'fullscreen',
+                    'fontsize',
                     'table',
                     'video',
-                    /**
-                     * exception
-                     */
-                    //'limiter', /* http://imperavi.com/redactor/plugins/limiter/ */
-                    //'counter', /* http://imperavi.com/redactor/plugins/counter/ */
                 ],
             ],
-    ])
+        ]
+    )
 ?>
 ```
