@@ -10,7 +10,7 @@
             "email": "creator.git@gmail.com"
         }
     ],
-    "require": {
+    "require-dev": {
         "yiisoft/yii2": "*",
         "krok/yii2-language": "*",
         "krok/yii2-page": "*",
