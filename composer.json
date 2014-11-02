@@ -10,11 +10,11 @@
             "email": "creator.git@gmail.com"
         }
     ],
-    "require-dev": {
+    "require": {
         "yiisoft/yii2": "*",
-        "krok/yii2-language": "*",
-        "krok/yii2-page": "*",
-        "krok/yii2-cp": "*"
+        "krok/yii2-language": "dev-master",
+        "krok/yii2-page": "dev-master",
+        "krok/yii2-cp": "dev-master"
     },
     "autoload": {
         "psr-4": {
