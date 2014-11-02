@@ -12,12 +12,17 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "krok/yii2-language": "dev-master",
-        "krok/yii2-page": "dev-master"
+        "krok/yii2-language": "*",
+        "krok/yii2-page": "*"
     },
     "autoload": {
         "psr-4": {
             "krok\\imperavi\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1"
         }
     }
 }
