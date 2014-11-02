@@ -41,17 +41,19 @@ upload directory `@webroot/uploads`
 ],
 ```
 
-register modules for Cp modules ( @vendor\krok\cp\Cp.php )
+register modules
 
 ```
-public function registerModules()
-{
-    $this->modules = [
-        'imperavi' => [
-            'class' => 'krok\imperavi\Manage',
+'modules' => [
+        'cp' => [
+            'class' => 'krok\cp\Cp',
+            'modules' => [
+                'imperavi' => [
+                    'class' => 'krok\imperavi\Manage',
+                ],
+            ],
         ],
-    ];
-}
+],
 ```
 
 Usage
