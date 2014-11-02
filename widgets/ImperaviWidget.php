@@ -40,6 +40,7 @@ class ImperaviWidget extends \yii\widgets\InputWidget
     public function run()
     {
         $this->registerAsset();
+        $this->registerCsrf();
         $this->registerPlugins();
         $this->registerLanguage();
         $this->registerClientScript();
@@ -55,6 +56,12 @@ class ImperaviWidget extends \yii\widgets\InputWidget
     {
         $this->_assetBundle = ImperaviWidgetAsset::register($this->getView());
         list($this->_assetBundle->basePath, $this->_assetBundle->baseUrl) = $this->getAssetsUrl();
+    }
+
+    public function registerCsrf()
+    {
+        $this->clientOptions['uploadImageFields'][Yii::$app->request->csrfParam] = Yii::$app->request->getCsrfToken();
+        $this->clientOptions['uploadFileFields'][Yii::$app->request->csrfParam] = Yii::$app->request->getCsrfToken();
     }
 
     public function registerPlugins()

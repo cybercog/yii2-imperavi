@@ -7,11 +7,6 @@ use krok\cp\components\Controller;
 class ManageController extends Controller
 {
     /**
-     * @var bool
-     */
-    public $enableCsrfValidation = false;
-
-    /**
      * @return array
      */
     public function actions()
