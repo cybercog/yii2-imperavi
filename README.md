@@ -35,7 +35,9 @@ upload directory `@webroot/uploads`
 
 ```
 'modules' => [
-    'class' => 'krok\imperavi\Imperavi',
+        'imperavi' => [
+            'class' => 'krok\imperavi\Imperavi',
+        ],
 ],
 ```
 
