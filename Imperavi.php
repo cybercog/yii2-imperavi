@@ -2,7 +2,7 @@
 
 namespace krok\imperavi;
 
-use yii;
+use Yii;
 
 class Imperavi extends \yii\base\Module implements \yii\base\BootstrapInterface
 {
@@ -34,7 +34,7 @@ class Imperavi extends \yii\base\Module implements \yii\base\BootstrapInterface
 
     public function registerTranslations()
     {
-        yii::$app->i18n->translations[$this->id] = [
+        Yii::$app->i18n->translations[$this->id] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
             'basePath' => '@krok/imperavi/messages',

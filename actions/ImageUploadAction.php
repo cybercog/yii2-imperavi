@@ -2,7 +2,6 @@
 
 namespace krok\imperavi\actions;
 
-use Yii;
 use yii\helpers\Json;
 use krok\imperavi\models\ImageUploadModel;
 

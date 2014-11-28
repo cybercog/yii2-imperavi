@@ -23,28 +23,28 @@ to the require section of your `composer.json` file.
 Configure
 -----------------
 
-Add to config file (config/web.php or common\config\main.php)
+Add to config file (config/web.php or common/config/main.php)
 
 ```
-'bootstrap' => [
-    'imperavi',
-],
+    'bootstrap' => [
+        'imperavi',
+    ],
 ```
 
 upload directory `@webroot/uploads`
 
 ```
-'modules' => [
+    'modules' => [
         'imperavi' => [
             'class' => 'krok\imperavi\Imperavi',
         ],
-],
+    ],
 ```
 
 register modules
 
 ```
-'modules' => [
+    'modules' => [
         'cp' => [
             'class' => 'krok\cp\Cp',
             'modules' => [
@@ -53,7 +53,7 @@ register modules
                 ],
             ],
         ],
-],
+    ],
 ```
 
 Usage
@@ -85,11 +85,11 @@ or config advanced redactor reference [Docs](http://imperavi.com/redactor/docs/)
         [
             'clientOptions' => [
                 'buttonSource' => true,
-                'fileUpload' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/FileUpload']),
-                'fileManagerJson' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/FileList']),
-                'imageUpload' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/ImageUpload']),
-                'imageManagerJson' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/ImageList']),
-                'definedLinks' => yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/PageList']),
+                'fileUpload' => Yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/FileUpload']),
+                'fileManagerJson' => Yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/FileList']),
+                'imageUpload' => Yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/ImageUpload']),
+                'imageManagerJson' => Yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/ImageList']),
+                'definedLinks' => Yii::$app->getUrlManager()->createUrl(['/cp/imperavi/manage/PageList']),
                 'plugins' => [
                     'filemanager',
                     'imagemanager',

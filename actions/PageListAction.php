@@ -6,7 +6,7 @@ use krok\language\models\Language;
 use krok\page\models\Page;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
-use yii;
+use Yii;
 
 class PageListAction extends \yii\base\Action
 {
@@ -19,7 +19,7 @@ class PageListAction extends \yii\base\Action
             ArrayHelper::merge(
                 [
                     [
-                        'name' => yii::t('imperavi', 'Link to the page'),
+                        'name' => Yii::t('imperavi', 'Link to the page'),
                         'url' => '#',
                     ],
                 ],
@@ -28,7 +28,7 @@ class PageListAction extends \yii\base\Action
                     function ($row) {
                         return [
                             'name' => $row['title'],
-                            'url' => yii::$app->getUrlManager()->createUrl(['/index/' . $row['name']]),
+                            'url' => Yii::$app->getUrlManager()->createUrl($row['name']),
                         ];
                     }
                 )

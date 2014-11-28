@@ -2,7 +2,7 @@
 
 namespace krok\imperavi\widgets;
 
-use yii;
+use Yii;
 use yii\helpers\Json;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -124,6 +124,6 @@ class ImperaviWidget extends \yii\widgets\InputWidget
      */
     public function getAssetsUrl()
     {
-        return yii::$app->getAssetManager()->publish($this->getAssetsPath());
+        return Yii::$app->getAssetManager()->publish($this->getAssetsPath());
     }
 }

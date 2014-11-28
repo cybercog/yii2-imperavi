@@ -2,9 +2,10 @@
 
 namespace krok\imperavi;
 
+use krok\cp\components\Module;
 use krok\language\models\Language;
 
-class Manage extends \yii\base\Module
+class Manage extends Module
 {
     /**
      * @var string
