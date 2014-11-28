@@ -12,8 +12,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "krok/yii2-language": "*",
-        "krok/yii2-page": "*"
+        "krok/yii2-language": "0.1.x-dev"
     },
     "autoload": {
         "psr-4": {
