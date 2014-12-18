@@ -2,6 +2,8 @@
 
 namespace krok\imperavi;
 
+use Yii;
+use yii\helpers\FileHelper;
 use krok\cp\components\Module;
 use krok\language\models\Language;
 
@@ -33,5 +35,6 @@ class Manage extends Module
     public function registerUploadDir()
     {
         $this->uploadDir .= DIRECTORY_SEPARATOR . Language::getCurrent();
+        FileHelper::createDirectory(Yii::getAlias($this->uploadDir), 0777, true);
     }
 }

@@ -21,7 +21,7 @@ class ImperaviWidget extends \yii\widgets\InputWidget
     public $selector = null;
 
     /**
-     * @var null
+     * @var ImperaviWidgetAsset
      */
     private $_assetBundle = null;
 

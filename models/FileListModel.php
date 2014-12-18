@@ -70,10 +70,6 @@ class FileListModel extends \yii\base\Model
      */
     protected function getSize()
     {
-        $size = filesize($this->_file);
-        $range = ['B', 'K', 'M', 'G', 'T', 'P'];
-        $factor = floor((strlen($size) - 1) / 3);
-        $suffix = isset($range[$factor]) ? $range[$factor] : '?';
-        return sprintf("%.1f", $size / pow(1024, $factor)) . ' ' . $suffix;
+        return Yii::$app->formatter->asSize(filesize($this->_file), 2);
     }
 }

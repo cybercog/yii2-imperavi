@@ -10,7 +10,7 @@ use yii\helpers\Json;
 class FileUploadModel extends \yii\base\Model
 {
     /**
-     * @var null
+     * @var UploadedFile
      */
     public $file = null;
 

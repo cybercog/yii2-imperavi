@@ -2,7 +2,6 @@
 
 namespace krok\imperavi\actions;
 
-use yii\helpers\Json;
 use krok\imperavi\models\FileUploadModel;
 
 class FileUploadAction extends \yii\base\Action
@@ -18,5 +17,6 @@ class FileUploadAction extends \yii\base\Action
                 return $model->toJson();
             }
         }
+        return null;
     }
 }
