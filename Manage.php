@@ -22,7 +22,7 @@ class Manage extends Module
     /**
      * @var string
      */
-    public $uploadDir = '@webroot/uploads';
+    public $uploadDir = 'uploads';
 
     public function init()
     {
@@ -34,7 +34,7 @@ class Manage extends Module
 
     public function registerUploadDir()
     {
-        $this->uploadDir .= DIRECTORY_SEPARATOR . Language::getCurrent();
+        $this->uploadDir = '@webroot' . DIRECTORY_SEPARATOR . $this->uploadDir . DIRECTORY_SEPARATOR . Language::getCurrent();
         FileHelper::createDirectory(Yii::getAlias($this->uploadDir), 0777, true);
     }
 }

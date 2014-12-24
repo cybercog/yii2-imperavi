@@ -69,11 +69,11 @@ class ImperaviWidget extends \yii\widgets\InputWidget
         $plugins = ArrayHelper::getValue($this->clientOptions, 'plugins', []);
         if (is_array($plugins)) {
             foreach ($plugins as $plugin) {
-                $js = 'plugins/' . $plugin . '/' . $plugin . '.js';
+                $js = 'plugins' . DIRECTORY_SEPARATOR . $plugin . DIRECTORY_SEPARATOR . $plugin . '.js';
                 if (file_exists($this->_assetBundle->basePath . DIRECTORY_SEPARATOR . $js)) {
                     $this->_assetBundle->js[] = $js;
                 }
-                $css = 'plugins/' . $plugin . '/' . $plugin . '.css';
+                $css = 'plugins' . DIRECTORY_SEPARATOR . $plugin . DIRECTORY_SEPARATOR . $plugin . '.css';
                 if (file_exists($this->_assetBundle->basePath . DIRECTORY_SEPARATOR . $css)) {
                     $this->_assetBundle->css[] = $css;
                 }
@@ -95,7 +95,7 @@ class ImperaviWidget extends \yii\widgets\InputWidget
             );
         }
 
-        $js = 'lang/' . $language . '.js';
+        $js = 'lang' . DIRECTORY_SEPARATOR . $language . '.js';
 
         if (file_exists($this->_assetBundle->basePath . DIRECTORY_SEPARATOR . $js)) {
             $this->_assetBundle->js[] = $js;
@@ -116,7 +116,7 @@ class ImperaviWidget extends \yii\widgets\InputWidget
      */
     public function getAssetsPath()
     {
-        return __DIR__ . '/assets';
+        return __DIR__ . DIRECTORY_SEPARATOR . 'assets';
     }
 
     /**

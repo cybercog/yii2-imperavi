@@ -37,7 +37,7 @@ class Imperavi extends \yii\base\Module implements \yii\base\BootstrapInterface
         Yii::$app->i18n->translations[$this->id] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@krok/' . $this->id . '/messages',
+            'basePath' => '@krok' . DIRECTORY_SEPARATOR . $this->id . DIRECTORY_SEPARATOR . 'messages',
         ];
     }
 }
