@@ -6,6 +6,7 @@ use Yii;
 use yii\helpers\Json;
 use yii\helpers\FileHelper;
 use yii\helpers\ArrayHelper;
+use yii\helpers\StringHelper;
 
 class FileListModel extends \yii\base\Model
 {
@@ -62,7 +63,7 @@ class FileListModel extends \yii\base\Model
      */
     protected function normalizeFilename()
     {
-        return basename($this->_file);
+        return StringHelper::basename($this->_file);
     }
 
     /**

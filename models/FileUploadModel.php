@@ -4,6 +4,7 @@ namespace krok\imperavi\models;
 
 use Yii;
 use yii\helpers\FileHelper;
+use yii\helpers\StringHelper;
 use yii\web\UploadedFile;
 use yii\helpers\Json;
 
@@ -72,7 +73,7 @@ class FileUploadModel extends \yii\base\Model
      */
     protected function normalizeFilename()
     {
-        return basename($this->file);
+        return StringHelper::basename($this->_file);
     }
 
     /**
